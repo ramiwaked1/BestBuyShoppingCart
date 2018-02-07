@@ -32,7 +32,7 @@
   li {
     display: inline;
     color: white;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
   }
 
@@ -63,6 +63,13 @@
     font-weight: bold;
     font-size: 48px;
     color: #282828;
+  }
+
+  h1.bannertitle2 {
+    font-weight: bold;
+    font-size: 40px;
+    color: #282828;
+    text-align: center;
   }
 
   h1#updatetitle {
@@ -119,6 +126,26 @@
     padding-bottom: 25px;
   }
 
+  p.product-sku {
+    text-align: center;
+    color: #969696;
+    font-size: 20px;
+    font-weight: lighter;
+    padding-top: 15px;
+    padding-bottom: 25px;
+  }
+
+  p.product-price {
+    text-align: center;
+    color: #63aa8a;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: -20px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+  }
+
   #banner {
     background-color: #BECFC7;
     padding: 200px 5.1em 130px;
@@ -154,7 +181,8 @@
   }
 
   #shop {
-    margin-top: 600px;
+    margin-top: 120px;
+    margin-bottom: 120px;
   }
 
   input[type=email] {
@@ -205,12 +233,44 @@
     border-radius: 5px;
     margin: 40px 2px;
   }
+
+  img.product-image {
+    margin-left: 30%;
+    height: 400px;
+    width: 400px;
+  }
+
+  button.product-button {
+    background-color: #63AA8A;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 20px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 35.5%;
+  }
 }
 /*Tablet Styles*/
-@media only screen and (min-width: 768px) and (min-width: 1024px) {}
+@media only screen and (min-width: 768px) and (min-width: 1024px) {
+
+}
 /*Desktop Styles*/
 @media only screen and (min-width: 1240px) {
   input[type=email] {
     margin-left: 355px;
   }
+  img.product-image {
+    margin-left: 35%;
+}
+button.product-button {
+    margin-left: 37%;
+    font-size: 28px;
+}
 }
