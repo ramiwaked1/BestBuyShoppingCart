@@ -1,4 +1,6 @@
 import request from "./bestbuy";
+import $ from 'jquery';
+
 
 export default class App {
   constructor() {
@@ -13,21 +15,32 @@ export default class App {
       .then(data => {
         console.log(data);
         /* fill carousel with products */
-        for (var i = 0; i < 2; i++) {
+        for (var i = 0; i < data.products.length; i++) {
           var name = (data.products[i].name);
           var price = (data.products[i].regularPrice);
           var sku = (data.products[i].sku);
           var multimedia = (data.products[i].largeFrontImage);
           var $div = $("<div></div>");
-          var $p = $("<p></p>");
           var $h1 = $("<h1></h1>");
-          $h1.append($p);
+          var $sku = $("<p></p>");
+          var $img = $("<img>");
+          var $price = $("<p></p>");
+          var $button = $("<button>ADD TO CART</button>");
           $h1.append(name);
+          $price.append(price);
+          $sku.append(sku);
           $div.append($h1);
-          $div.css('background-image', 'url(' + multimedia + ')');
+          $div.append($sku);
+          $div.append($img);
+          $img.attr('src', multimedia);
+          $div.append($price);
+          $div.append($button);
           $div.addClass('products');
-          $p.addClass('product-sku');
           $h1.addClass('bannertitle2');
+          $sku.addClass('product-sku');
+          $img.addClass('product-image');
+          $price.addClass('product-price');
+          $button.addClass('product-button');
           $("#shop").append($div);
         }
       })
