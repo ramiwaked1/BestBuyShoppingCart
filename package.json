@@ -25,6 +25,7 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
+    "flickity": "^2.0.10",
     "jquery": "^3.3.1"
   }
 }
