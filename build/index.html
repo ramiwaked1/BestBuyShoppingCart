@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>Best Buy Shopping Cart</title>
   <link rel="stylesheet" type="text/css" href="./css/build.css" />
+  <link rel="stylesheet" type="text/css" href="./css/flickity.css" />
 </head>
 
 <body>
@@ -26,10 +27,10 @@
   <section id="menu">
     <nav>
       <ul>
-        <li><a value="((categoryPath.id=abcat0502000))">LAPTOPS</a></li>
-        <li><a value="((categoryPath.id=pcmcat209400050001))">CELLPHONES</a></li>
-        <li><a value="((categoryPath.id=abcat0101000))">TELEVISION</a></li>
-        <li><a value="((categoryPath.id=abcat0204000))">HEADPHONES</a></li>
+        <li><a class="laptops" data-path="((categoryPath.id=abcat0502000))">LAPTOPS</a></li>
+        <li><a class="cameras" data-path="((categoryPath.id=abcat0401000))">CAMERAS</a></li>
+        <li><a class="televisions" data-path="((categoryPath.id=abcat0101000))">TELEVISIONS</a></li>
+        <li><a class="desktops" data-path="((categoryPath.id=abcat0501000))">DESKTOPS</a></li>
       </ul>
     </nav>
   </section>
@@ -47,6 +48,7 @@
       </section>
     </form>
   </section>
+  <script type="text/javascript" src="js/flickity.pkgd.js"></script>
   <script type="text/javascript" src="js/bundle.js"></script>
 </body>
 
