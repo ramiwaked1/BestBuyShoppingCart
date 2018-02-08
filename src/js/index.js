@@ -8,7 +8,8 @@ export default class App {
     this.initBBCall();
     this.flkty = new Flickity('#shop', {
       // options
-      imagesLoaded: true
+      imagesLoaded: true,
+      wrapAround: true,
     });
 
     $("#menu a").click(event => {
