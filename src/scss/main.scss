@@ -69,6 +69,7 @@
     font-weight: bold;
     font-size: 25px;
     color: #282828;
+    line-height: 36px;
     margin-right: 40px;
     margin-left: 40px;
     text-align: center;
@@ -188,7 +189,8 @@
   }
 
   .products {
-    margin-top: 60px;
+    margin-top: 0;
+    width: 100%;
   }
 
   input[type=email] {
@@ -242,7 +244,7 @@
 
   img.product-image {
     margin-left: 30%;
-    height: 400px;
+    height: 250px;
     width: 400px;
   }
 
@@ -264,19 +266,23 @@
   }
 }
 /*Tablet Styles*/
-@media only screen and (min-width: 768px) and (min-width: 1024px) {
-
-}
+@media only screen and (min-width: 768px) and (min-width: 1024px) {}
 /*Desktop Styles*/
 @media only screen and (min-width: 1240px) {
   input[type=email] {
     margin-left: 355px;
   }
+
+  p.product-price {
+    margin-left: 1%;
+  }
+
   img.product-image {
-    margin-left: 35%;
-}
-button.product-button {
-    margin-left: 37%;
+    margin-left: 36%;
+  }
+
+  button.product-button {
+    margin-left: 38%;
     font-size: 28px;
-}
+  }
 }
