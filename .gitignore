@@ -21,3 +21,4 @@ build/
 !build/index.html
 !build/css/flickity.css
 !build/js/flickity.pkgd.js
+!build/images
