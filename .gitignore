@@ -16,9 +16,3 @@ ehthumbs.db
 # npm
 node_modules/
 npm-debug.log
-
-build/
-!build/index.html
-!build/css/flickity.css
-!build/js/flickity.pkgd.js
-!build/images
