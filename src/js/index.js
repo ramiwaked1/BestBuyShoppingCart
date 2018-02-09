@@ -1,6 +1,7 @@
 import request from "./bestbuy";
 import $ from 'jquery';
 import flickity from 'flickity';
+import cart from "./cart";
 
 
 export default class App {
