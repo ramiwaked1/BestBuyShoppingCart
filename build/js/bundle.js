@@ -14302,6 +14302,9 @@ exports.default = function (obj) {
 };
 
 },{}],21:[function(require,module,exports){
+"use strict";
+
+},{}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14321,6 +14324,10 @@ var _jquery2 = _interopRequireDefault(_jquery);
 var _flickity = require('flickity');
 
 var _flickity2 = _interopRequireDefault(_flickity);
+
+var _cart = require('./cart');
+
+var _cart2 = _interopRequireDefault(_cart);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -14410,4 +14417,4 @@ exports.default = App;
 
 var x = new App();
 
-},{"./bestbuy":20,"flickity":9,"jquery":16}]},{},[21]);
+},{"./bestbuy":20,"./cart":21,"flickity":9,"jquery":16}]},{},[22]);
