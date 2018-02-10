@@ -14302,9 +14302,6 @@ exports.default = function (obj) {
 };
 
 },{}],21:[function(require,module,exports){
-"use strict";
-
-},{}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14324,10 +14321,6 @@ var _jquery2 = _interopRequireDefault(_jquery);
 var _flickity = require('flickity');
 
 var _flickity2 = _interopRequireDefault(_flickity);
-
-var _cart = require('./cart');
-
-var _cart2 = _interopRequireDefault(_cart);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -14374,35 +14367,49 @@ var App = function () {
           /*Create the variables you're going to need to get the products on the page*/
           var name = data.products[i].albumTitle;
           var price = data.products[i].regularPrice;
-          var sku = data.products[i].department;
+          var department = data.products[i].department;
           var multimedia = data.products[i].largeFrontImage;
+          var sku = data.products[i].sku;
           /*Create the html elements you are going to need to get the products on the page*/
           var $div = (0, _jquery2.default)("<div></div>");
           var $h1 = (0, _jquery2.default)("<h1></h1>");
-          var $sku = (0, _jquery2.default)("<p></p>");
+          var $department = (0, _jquery2.default)("<p></p>");
           var $img = (0, _jquery2.default)("<img>");
           var $price = (0, _jquery2.default)("<p>$</p>");
           var $button = (0, _jquery2.default)("<button>ADD TO CART</button>");
           /*Add the html elements on the page to get the products*/
           $h1.append(name);
           $price.append(price);
-          $sku.append(sku);
+          $department.append(department);
           $div.append($h1);
-          $div.append($sku);
+          $div.append($department);
           $div.append($img);
           $img.attr('src', multimedia);
           $div.append($price);
+          $button.attr('sku', sku);
           $div.append($button);
           /*Set the classes to each element for the CSS to work*/
           $div.addClass('products');
           $h1.addClass('bannertitle2');
-          $sku.addClass('product-sku');
+          $department.addClass('product-department');
           $img.addClass('product-image');
           $price.addClass('product-price');
           $button.addClass('product-button');
           //$("#shop").append($div);
           _this2.flkty.append($div);
         }
+        (0, _jquery2.default)("button").click(function (event) {
+          console.log("ADD TO CART");
+          var bestbuy = {
+            productSku: sku,
+            productName: name,
+            productDepartment: department,
+            productPrice: price
+          };
+          var path = (0, _jquery2.default)(event.target).attr('sku');
+          sessionStorage.setItem(path, JSON.stringify(bestbuy));
+          console.log(i);
+        });
       }).catch(function (error) {
         console.log("warning Christopher Robins... Error");
         console.log(error);
@@ -14417,4 +14424,4 @@ exports.default = App;
 
 var x = new App();
 
-},{"./bestbuy":20,"./cart":21,"flickity":9,"jquery":16}]},{},[22]);
+},{"./bestbuy":20,"flickity":9,"jquery":16}]},{},[21]);
