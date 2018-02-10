@@ -1,7 +1,6 @@
 import request from "./bestbuy";
 import $ from 'jquery';
 import flickity from 'flickity';
-import cart from "./cart";
 
 
 export default class App {
@@ -38,36 +37,49 @@ export default class App {
           /*Create the variables you're going to need to get the products on the page*/
           var name = (data.products[i].albumTitle);
           var price = (data.products[i].regularPrice);
-          var sku = (data.products[i].department);
+          var department = (data.products[i].department);
           var multimedia = (data.products[i].largeFrontImage);
+          var sku = (data.products[i].sku);
           /*Create the html elements you are going to need to get the products on the page*/
           var $div = $("<div></div>");
           var $h1 = $("<h1></h1>");
-          var $sku = $("<p></p>");
+          var $department = $("<p></p>");
           var $img = $("<img>");
           var $price = $("<p>$</p>");
           var $button = $("<button>ADD TO CART</button>");
           /*Add the html elements on the page to get the products*/
           $h1.append(name);
           $price.append(price);
-          $sku.append(sku);
+          $department.append(department);
           $div.append($h1);
-          $div.append($sku);
+          $div.append($department);
           $div.append($img);
           $img.attr('src', multimedia);
           $div.append($price);
+          $button.attr('sku', sku);
           $div.append($button);
           /*Set the classes to each element for the CSS to work*/
           $div.addClass('products');
           $h1.addClass('bannertitle2');
-          $sku.addClass('product-sku');
+          $department.addClass('product-department');
           $img.addClass('product-image');
           $price.addClass('product-price');
           $button.addClass('product-button');
           //$("#shop").append($div);
-          this.flkty.append($div)
-
+          this.flkty.append($div);
         }
+        $("button").click(event => {
+          console.log("ADD TO CART");
+          var bestbuy = {
+                        productSku:sku,
+                        productName:name,
+                        productDepartment:department,
+                        productPrice:price
+                      };
+          const path = $(event.target).attr('sku');
+          sessionStorage.setItem(path, JSON.stringify(bestbuy));
+          console.log(i);
+        });
       })
 
       .catch(error => {
