@@ -67,19 +67,20 @@ export default class App {
           $button.addClass('product-button');
           //$("#shop").append($div);
           this.flkty.append($div);
+
+          $("button").click(event => {
+            console.log("ADD TO CART");
+            var bestbuy = {
+                          productSku:sku,
+                          productName:name,
+                          productDepartment:department,
+                          productPrice:price
+                        };
+            const path = $(event.target).attr('sku');
+            sessionStorage.setItem(path, JSON.stringify(bestbuy));
+            console.log(i);
+          });
         }
-        $("button").click(event => {
-          console.log("ADD TO CART");
-          var bestbuy = {
-                        productSku:sku,
-                        productName:name,
-                        productDepartment:department,
-                        productPrice:price
-                      };
-          const path = $(event.target).attr('sku');
-          sessionStorage.setItem(path, JSON.stringify(bestbuy));
-          console.log(i);
-        });
       })
 
       .catch(error => {
