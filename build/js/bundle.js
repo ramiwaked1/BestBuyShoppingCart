@@ -14397,19 +14397,20 @@ var App = function () {
           $button.addClass('product-button');
           //$("#shop").append($div);
           _this2.flkty.append($div);
+
+          (0, _jquery2.default)("button").click(function (event) {
+            console.log("ADD TO CART");
+            var bestbuy = {
+              productSku: sku,
+              productName: name,
+              productDepartment: department,
+              productPrice: price
+            };
+            var path = (0, _jquery2.default)(event.target).attr('sku');
+            sessionStorage.setItem(path, JSON.stringify(bestbuy));
+            console.log(i);
+          });
         }
-        (0, _jquery2.default)("button").click(function (event) {
-          console.log("ADD TO CART");
-          var bestbuy = {
-            productSku: sku,
-            productName: name,
-            productDepartment: department,
-            productPrice: price
-          };
-          var path = (0, _jquery2.default)(event.target).attr('sku');
-          sessionStorage.setItem(path, JSON.stringify(bestbuy));
-          console.log(i);
-        });
       }).catch(function (error) {
         console.log("warning Christopher Robins... Error");
         console.log(error);
